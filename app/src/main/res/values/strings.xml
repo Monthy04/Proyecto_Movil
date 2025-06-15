@@ -1,5 +1,51 @@
 <resources>
     <string name="app_name">Proyecto_3P</string>
+
+    <!--Activity Ingreso-->
+    <string name="Titulo">Mundo Orejitas</string>
+    <string name="usuario">Usuario:</string>
+    <string name="password">Contraseña:</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrartxt">¿Aún no eres miembro?</string>
+    <string name="registro">¡Registrate!</string>
+
+    <!--Activity Registro-->
+    <string name="TituloRegistro">
+        ¡Unete a nosotos para darle lo mejor a tu mascota!
+    </string>
+    <string name="nombre">Nombre de usuario:</string>
+    <string name="correo">Correo Electronico:</string>
+    <string name="tel">Telefono:</string>
+    <string name="administrador">¿Eres Administrador?</string>
+    <string name="registrar">Unirse</string>
+
+    <!--Activity Productos-->
+    <string name="productos">Catalogo de Productos</string>
+    <string-array name="categorias">
+        <item>Comida</item>
+        <item>Accesorios</item>
+        <item>Juguetes</item>
+    </string-array>
+
+
+    <!--Activity Carrito-->
+    <string name="carrito">Mi Carrito</string>
+
+    <!--Activity Compras-->
+    <string name="compras">Mis Compras</string>
+
+    <!--Activity Usuario-->
+    <string name="user">Usuario</string>
+    <string name="editarUser">Editar Usuario</string>
+    <string name="eliminarUser">Eliminar Usuario</string>
+    <string name="agregarProducto">Agregar Producto</string>
+    <string name="buscarProducto">Buscar Producto</string>
+    <string name="editarProducto">Editar Producto</string>
+    <string name="eliminarProducto">Eliminar Producto</string>
+
+    <!--Activity Nosotros-->
+    <string name="nosotros">Nosotros</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -10,4 +56,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
