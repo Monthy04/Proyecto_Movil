@@ -1,16 +1,12 @@
 package com.example.proyecto_3p
 
-import kotlin.collections.mutableListOf
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto_3p.databinding.ItemProductoBinding
-import java.nio.DoubleBuffer
 
-class CarritoAdapter(private var productos: List<Producto>) : RecyclerView.Adapter<CarritoAdapter.ProductoViewHolder>()
+class CarritoAdapter(private var detalles: List<Detalle_Compra>) : RecyclerView.Adapter<CarritoAdapter.ProductoViewHolder>()
 {
     inner class ProductoViewHolder(val binding: ItemProductoBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -22,30 +18,36 @@ class CarritoAdapter(private var productos: List<Producto>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ProductoViewHolder, position: Int)
     {
-        val producto = productos[position]
-        holder.binding.txtNombreProd.text = producto.nombre
+        val product = detalles[position]
+        holder.binding.txtNombreProd.text = product.producto
         holder.binding.txtCategoriaProd.isVisible = false
         holder.binding.txtDescProd.isVisible = false
-        holder.binding.txtPrecioProd.text= "$${producto.precio}"
-        holder.binding.txtStock.isVisible = false
-        holder.binding.txtStrockProd.isVisible = false
+        holder.binding.txtPrecioProd.text= "$${product.total}"
+        holder.binding.txtStock.text = "Cantidad:"
+        holder.binding.txtStrockProd.text = "${product.cantidad}"
         holder.binding.btnAgregarCarrito.isVisible = false
     }
 
-    override fun getItemCount(): Int = productos.size
+    override fun getItemCount(): Int = detalles.size
+
+    fun getCantidad(): Int
+    {
+        var cantidad: Int = 0
+        for(product in detalles)
+        {
+            cantidad += product.cantidad
+        }
+        return cantidad
+    }
 
     fun getPrecio(): Double
     {
         var precio: Double = 0.0
-        for(Producto in productos)
+        for(product in detalles)
         {
-            precio += Producto.precio
+            precio += product.total
         }
         return precio
     }
 
-    fun actualizarLista(nuevaLista: List<Producto>) {
-        productos = nuevaLista
-        notifyDataSetChanged()
-    }
 }

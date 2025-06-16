@@ -76,7 +76,7 @@
 
                 <TextView
                     android:id="@+id/txtStock"
-                    android:layout_width="50dp"
+                    android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:text="@string/stock"
                     android:textColor="#1976D2"
@@ -106,7 +106,7 @@
 
                 <TextView
                     android:id="@+id/txtPrecio"
-                    android:layout_width="50dp"
+                    android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:text="@string/precio"
                     android:textColor="#1976D2"
