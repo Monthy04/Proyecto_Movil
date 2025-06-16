@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val productos = listOf(
-            Producto(1, "Croquetas Premium", "Para perros adultos", "croquetas", "Perros", 249.99, 10),
+            Producto(1, "Croquetas Premium", "Para perros adultos", "croqgit uetas", "Perros", 249.99, 10),
             Producto(2, "Juguete Gato", "Ratón de peluche", "juguete_gato", "Gatos", 99.50, 5),
             Producto(3, "Rascador", "Rascador grande", "rascador", "Gatos", 380.00, 2),
             Producto(4, "Collar", "Collar de cuero", "collar", "Perros", 150.00, 8)
