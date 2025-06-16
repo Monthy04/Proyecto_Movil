@@ -92,6 +92,7 @@ class RegistroActivity : AppCompatActivity()
                 if(!usuarioRegistrado)
                 {
                     val nuevoAdmin = Administrador()
+                    nuevoAdmin.registro = nuevosAdmins.size + 1000
                     nuevoAdmin.nombre = name.toString()
                     nuevoAdmin.password = pass.toString()
                     nuevoAdmin.correo = email.toString()
@@ -122,6 +123,7 @@ class RegistroActivity : AppCompatActivity()
                 if(!usuarioRegistrado)
                 {
                     val nuevoCliente = Cliente()
+                    nuevoCliente.registro = nuevosClientes.size + 1
                     nuevoCliente.nombre = name.toString()
                     nuevoCliente.password = pass.toString()
                     nuevoCliente.correo = email.toString()
