@@ -14,8 +14,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Únete a nosotros para darle lo mejor a tu mascota!"
-            android:textSize="18sp"
+            android:text="¡Únete para darle lo mejor a tu mascota!"
+            android:textSize="22sp"
             android:textColor="#3A7CA5"
             android:textStyle="bold"
             android:gravity="center"
@@ -28,7 +28,8 @@
             android:hint="Nombre de usuario"
             android:textColorHint="#565656"
             android:background="@drawable/edittext_background"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/etRegPassword"
@@ -39,7 +40,8 @@
             android:background="@drawable/edittext_background"
             android:padding="10dp"
             android:layout_marginTop="8dp"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/etEmail"
@@ -49,7 +51,8 @@
             android:textColorHint="#565656"
             android:background="@drawable/edittext_background"
             android:padding="10dp"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/etTelefono"
@@ -60,22 +63,48 @@
             android:background="@drawable/edittext_background"
             android:padding="10dp"
             android:layout_marginTop="8dp"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:textColor="#000000"/>
 
         <CheckBox
             android:id="@+id/cbAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="¿Eres administrador?"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:textColor="#000000"/>
+
+        <RadioGroup
+            android:id="@+id/rgTipoAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/rbVentas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ventas"
+                android:textColor="#000000"/>
+
+            <RadioButton
+                android:id="@+id/rbAdministracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Administración"
+                android:textColor="#000000"/>
+        </RadioGroup>
 
         <Button
             android:id="@+id/btnUnirse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Unirse"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#3A7CA5"
-            android:layout_marginTop="16dp" />
+            android:onClick="onClick"
+            android:text="Unirse"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </ScrollView>

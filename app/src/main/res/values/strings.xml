@@ -27,8 +27,8 @@
         <item>Accesorios</item>
         <item>Juguetes</item>
     </string-array>
-    <string name="precio">Precio:</string>
     <string name="stock">Stock:</string>
+    <string name="precio">Precio:</string>
     <string name="agregar">Agregar al Carrito</string>
 
     <!--Activity Carrito-->
