@@ -2,5 +2,5 @@ package com.example.proyecto_3p
 
 class Administrador : Usuario()
 {
-    var tipo: Int = 0
+    var tipo: Int = 1
 }

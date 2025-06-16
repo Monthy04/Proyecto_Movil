@@ -2,43 +2,41 @@ package com.example.proyecto_3p.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import androidx.activity.enableEdgeToEdge
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.proyecto_3p.JsonStorage
 import com.example.proyecto_3p.MainActivity
-import com.example.proyecto_3p.Producto
 import com.example.proyecto_3p.R
+import com.example.proyecto_3p.UsuarioManager
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        val productos = listOf(
-            Producto(1, "Croquetas Premium", "Para perros adultos", "croquetas", "Perros", 249.99, 10),
-            Producto(2, "Juguete Gato", "Ratón de peluche", "juguete_gato", "Gatos", 99.50, 5),
-            Producto(3, "Rascador", "Rascador grande", "rascador", "Gatos", 380.00, 2),
-            Producto(4, "Collar", "Collar de cuero", "collar", "Perros", 150.00, 8)
-        )
+        val etUsuario = findViewById<EditText>(R.id.editUsuario)
+        val etPassword = findViewById<EditText>(R.id.editPassword)
+        val btnIngresar = findViewById<Button>(R.id.btnIngresar)
 
-        JsonStorage.saveData(this,"productos.json",productos);
-    }
+        btnIngresar.setOnClickListener {
+            val nombre = etUsuario.text.toString()
+            val pass = etPassword.text.toString()
 
-    fun onClick(view: View?)
-    {
-        when (view?.id)
-        {
-            R.id.btnIngresar -> ingresar();
+            val usuario = UsuarioManager.iniciarSesion(nombre, pass)
+
+            if (usuario != null) {
+                Toast.makeText(this, "Bienvenido ${usuario.nombre}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish() // Cierra LoginActivity para que no se pueda regresar con el botón atrás
+            } else {
+                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
+        val tvRegistrarse = findViewById<TextView>(R.id.tvRegistrate)
 
-    private fun ingresar()
-    {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+        tvRegistrarse.setOnClickListener {
+            val intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
