@@ -7,11 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 import com.example.proyecto_3p.Administrador
 import com.example.proyecto_3p.R
+import com.example.proyecto_3p.RepVentas
 import com.example.proyecto_3p.Usuario
 import com.example.proyecto_3p.UsuarioManager
 
@@ -48,15 +51,20 @@ class FragmentUsusario : Fragment() {
         val btnEliminarUsuario = view.findViewById<Button>(R.id.btnEliminarUsuario)
 
         // Mostrar según tipo
-        if (usuario is Administrador) {
-            btnAgregar.visibility = View.VISIBLE
-            btnEditar.visibility = View.VISIBLE
-            btnEliminar.visibility = View.VISIBLE
-
-            if ((usuario as Administrador).tipo == 1) {
+        when (usuario) {
+            is Administrador -> {
+                btnAgregar.visibility = View.VISIBLE
+                btnEditar.visibility = View.VISIBLE
+                btnEliminar.visibility = View.VISIBLE
                 btnEditarUsuario.visibility = View.VISIBLE
                 btnEliminarUsuario.visibility = View.VISIBLE
             }
+            is RepVentas -> {
+                btnAgregar.visibility = View.VISIBLE
+                btnEditar.visibility = View.VISIBLE
+                btnEliminar.visibility = View.VISIBLE
+            }
+            // Cliente no necesita botones adicionales
         }
 
         btnCerrarSesion.setOnClickListener {
@@ -67,7 +75,26 @@ class FragmentUsusario : Fragment() {
         }
 
         btnCambiarContrasena.setOnClickListener {
-            Toast.makeText(requireContext(), "Funcionalidad pendiente", Toast.LENGTH_SHORT).show()
+            val dialogView = layoutInflater.inflate(R.layout.dialog_cambiar_contrasena, null)
+            val etNuevaContrasena = dialogView.findViewById<EditText>(R.id.etNuevaContrasena)
+            val btnConfirmar = dialogView.findViewById<Button>(R.id.btnConfirmarCambio)
+
+            val dialog = AlertDialog.Builder(requireContext())
+                .setView(dialogView)
+                .create()
+
+            btnConfirmar.setOnClickListener {
+                val nuevaContrasena = etNuevaContrasena.text.toString()
+                val usuario = UsuarioManager.usuarioActual
+                if (usuario?.cambiarContrasena(nuevaContrasena) == true) {
+                    Toast.makeText(requireContext(), "Contraseña actualizada", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                } else {
+                    Toast.makeText(requireContext(), "Introduce una contraseña válida", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            dialog.show()
         }
     }
 }
