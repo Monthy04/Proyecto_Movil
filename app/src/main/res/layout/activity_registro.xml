@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Únete a nosotros para darle lo mejor a tu mascota!"
+            android:text="¡Puto el que lo lea!"
             android:textSize="18sp"
             android:textColor="#3A7CA5"
             android:textStyle="bold"
