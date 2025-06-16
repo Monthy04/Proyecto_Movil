@@ -4,17 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyecto_3p.JsonStorage
-import com.example.proyecto_3p.Producto
 import com.example.proyecto_3p.CarritoAdapter
 import com.example.proyecto_3p.Compra
 import com.example.proyecto_3p.Detalle_Compra
-import com.example.proyecto_3p.R
-import com.example.proyecto_3p.Usuario
 import com.example.proyecto_3p.databinding.FragmentCarritoBinding
 import java.time.LocalDate
 
@@ -41,7 +36,7 @@ class FragmentCarrito : Fragment()
         binding.tvTotalPrecio.text = "$${precio}"
 
         binding.btnComprar.setOnClickListener{
-            realizarCompra();
+            realizarCompra()
         }
 
         return binding.root
@@ -49,8 +44,8 @@ class FragmentCarrito : Fragment()
 
     private fun realizarCompra()
     {
-        val fecha = LocalDate.now();
-        val usuario = "xd";
+        val fecha = LocalDate.now()
+        val usuario = "xd"
         val comprasUser = "${usuario}Compras.json"
         compras = JsonStorage.loadData(requireContext(), "comprasUser") ?: emptyList()
         for(compraRegistrada in compras)
@@ -58,7 +53,7 @@ class FragmentCarrito : Fragment()
             comprasNew.add(compraRegistrada)
         }
 
-        val nuevaCompra = Compra();
+        val nuevaCompra = Compra()
         val folio = compras.size
         nuevaCompra.folio = folio
         nuevaCompra.usuario = usuario
@@ -67,6 +62,6 @@ class FragmentCarrito : Fragment()
         nuevaCompra.precio_total = precio
 
         comprasNew.add(nuevaCompra)
-        JsonStorage.saveData(requireContext(),"comprasUser",comprasNew)
+        JsonStorage.saveData(requireContext(),comprasUser,comprasNew)
     }
 }
