@@ -24,9 +24,14 @@ class ProductosAdapter(private var productos: List<Producto>) : RecyclerView.Ada
     {
         val producto = productos[position]
         holder.binding.txtNombreProd.text = producto.nombre
-        holder.binding.txtCategoriaProd.text = producto.categoria
+
+        val categoria = "Categoria: ${producto.categoria}"
+        holder.binding.txtCategoriaProd.text = categoria
+
         holder.binding.txtDescProd.text = producto.desc
+
         holder.binding.txtPrecioProd.text= "$${producto.precio}"
+
         holder.binding.txtStrockProd.text= "${producto.disponibilidad}."
 
         holder.binding.btnAgregarCarrito.setOnClickListener{
