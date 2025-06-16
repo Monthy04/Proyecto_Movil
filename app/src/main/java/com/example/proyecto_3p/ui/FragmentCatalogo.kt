@@ -11,27 +11,20 @@ import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyecto_3p.databinding.FragmentCatalogoBinding
 import com.example.proyecto_3p.ProductosAdapter
+import com.example.proyecto_3p.ui.CatalogoProductos
 
 
-class FragmentCatalogo : Fragment()
-{
+class FragmentCatalogo : Fragment() {
     private lateinit var binding: FragmentCatalogoBinding
     private lateinit var adapter: ProductosAdapter
-
-    private val productos = listOf(
-        Producto(1, "Croquetas Premium", "Para perros adultos", "croquetas", "Perros", 249.99, 10),
-        Producto(2, "Juguete Gato", "Ratón de peluche", "juguete_gato", "Gatos", 99.50, 5),
-        Producto(3, "Rascador", "Rascador grande", "rascador", "Gatos", 380.00, 2),
-        Producto(4, "Collar", "Collar de cuero", "collar", "Perros", 150.00, 8)
-    )
 
     private val categorias = listOf("Todos", "Perros", "Gatos")
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentCatalogoBinding.inflate(inflater, container, false)
 
-        // Setup RecyclerView
-        adapter = ProductosAdapter(productos)
+        // Usamos la lista compartida del repositorio
+        adapter = ProductosAdapter(CatalogoProductos.obtenerProductos())
         binding.recyclerViewProductos.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewProductos.adapter = adapter
 
@@ -48,12 +41,11 @@ class FragmentCatalogo : Fragment()
             }
         })
 
-        binding.categoriaFilter.setOnClickListener{
+        binding.categoriaFilter.setOnClickListener {
             binding.categoriaFilter.showDropDown()
         }
-        
-        binding.categoriaFilter.setOnItemClickListener { _, _, _, _ ->
 
+        binding.categoriaFilter.setOnItemClickListener { _, _, _, _ ->
             filtrarProductos()
         }
 
@@ -64,7 +56,7 @@ class FragmentCatalogo : Fragment()
         val texto = binding.searchView.query.toString().lowercase()
         val categoriaSeleccionada = binding.categoriaFilter.text.toString()
 
-        val filtrados = productos.filter {
+        val filtrados = CatalogoProductos.obtenerProductos().filter {
             (categoriaSeleccionada == "Todos" || it.categoria == categoriaSeleccionada) &&
                     it.nombre.lowercase().contains(texto)
         }
