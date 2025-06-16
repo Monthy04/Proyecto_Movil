@@ -50,7 +50,7 @@ class ProductosAdapter(private var productos: List<Producto>) : RecyclerView.Ada
             else
             {
                 productosCarrito.add(productos[position])
-                var detalles: Detalle_Compra =  Detalle_Compra()
+                var detalles =  Detalle_Compra()
                 detalles.producto = productos[position].nombre
                 detalles.cantidad = 1
                 detalles.total = productos[position].precio
