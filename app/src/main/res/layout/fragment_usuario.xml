@@ -1,14 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutUsuario"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.FragmentUsuario">
+    android:background="#F2F2F2"
+    android:padding="24dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Título: nombre del usuario -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tvNombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Usuario"
+        android:textSize="28sp"
+        android:textColor="#3A7CA5"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
-</FrameLayout>
+    <!-- Número de Registro -->
+    <TextView
+        android:id="@+id/tvRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro: 0"
+        android:textColor="#565656"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Correo -->
+    <TextView
+        android:id="@+id/tvCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo: usuario@ejemplo.com"
+        android:textColor="#565656"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Teléfono -->
+    <TextView
+        android:id="@+id/tvTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teléfono: 1234567890"
+        android:textColor="#565656"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvCorreo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Botón: Cambiar Contraseña -->
+    <Button
+        android:id="@+id/btnCambiarContrasena"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cambiar contraseña"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3A7CA5"
+        app:layout_constraintTop_toBottomOf="@id/tvTelefono"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Botón: Cerrar sesión -->
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cerrar sesión"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3A7CA5"
+        app:layout_constraintTop_toBottomOf="@id/btnCambiarContrasena"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Grupo: Representante de Ventas -->
+    <Button
+        android:id="@+id/btnAgregarProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Agregar producto"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3A7CA5"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnCerrarSesion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <Button
+        android:id="@+id/btnEditarProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Editar producto"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3A7CA5"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnAgregarProducto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnEliminarProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar producto"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3A7CA5"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnEditarProducto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Grupo: Solo para Administrador -->
+    <Button
+        android:id="@+id/btnEditarUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Editar usuario"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3A7CA5"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnEliminarProducto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <Button
+        android:id="@+id/btnEliminarUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar usuario"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3A7CA5"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnEditarUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

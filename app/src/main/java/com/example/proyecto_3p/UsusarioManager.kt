@@ -2,13 +2,13 @@ package com.example.proyecto_3p
 
 object UsuarioManager {
     val usuariosRegistrados = ArrayList<Usuario>()
+    var usuarioActual: Usuario? = null // <--- Aquí lo agregamos
 
     fun registrarUsuario(nombre: String, password: String, correo: String, telefono: String): Boolean {
-        // Verifica si el nombre ya existe
         if (usuariosRegistrados.any { it.nombre == nombre }) return false
 
         val nuevoUsuario = Usuario()
-        nuevoUsuario.registro = usuariosRegistrados.size + 1 // empieza en 1
+        nuevoUsuario.registro = usuariosRegistrados.size + 1
         nuevoUsuario.nombre = nombre
         nuevoUsuario.password = password
         nuevoUsuario.correo = correo
@@ -19,6 +19,9 @@ object UsuarioManager {
     }
 
     fun iniciarSesion(nombre: String, password: String): Usuario? {
-        return usuariosRegistrados.find { it.nombre == nombre && it.password == password }
+        val usuario = usuariosRegistrados.find { it.nombre == nombre && it.password == password }
+        usuarioActual = usuario // <--- Aquí se guarda el usuario que inició sesión
+        return usuario
     }
 }
+
