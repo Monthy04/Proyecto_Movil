@@ -7,4 +7,5 @@ open class Usuario
     var password: String = ""
     var correo: String = ""
     var telefono: String = ""
+    var admin: Boolean = false
 }

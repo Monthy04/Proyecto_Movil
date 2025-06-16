@@ -74,6 +74,27 @@
             android:layout_marginTop="12dp"
             android:textColor="#000000"/>
 
+        <RadioGroup
+            android:id="@+id/rgTipoAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/rbVentas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ventas" />
+
+            <RadioButton
+                android:id="@+id/rbAdministracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Administración" />
+        </RadioGroup>
+
         <Button
             android:id="@+id/btnUnirse"
             android:layout_width="match_parent"
