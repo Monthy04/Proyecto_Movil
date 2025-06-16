@@ -26,7 +26,7 @@ class ProductosAdapter(private var productos: List<Producto>) : RecyclerView.Ada
         holder.binding.txtCategoriaProd.text = producto.categoria
         holder.binding.txtDescProd.text = producto.desc
         holder.binding.txtPrecioProd.text= "${producto.precio}"
-        holder.binding.txtStrockProd.text= "$${producto.disponibilidad}"
+        holder.binding.txtStrockProd.text= "$${producto.disponibilidad}."
 
         holder.binding.btnAgregarCarrito.setOnClickListener{
             Toast.makeText(holder.itemView.context,"Producto Agregado", Toast.LENGTH_SHORT).show()
