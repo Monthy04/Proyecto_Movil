@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Proyecto_3P</string>
+    <string name="app_name" translatable="false">Proyecto_3P</string>
 
     <!--Activity Ingreso-->
     <string name="Titulo">Mundo Orejitas</string>
@@ -26,7 +27,6 @@
         <item>Accesorios</item>
         <item>Juguetes</item>
     </string-array>
-
 
     <!--Activity Carrito-->
     <string name="carrito">Mi Carrito</string>
@@ -56,6 +56,17 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Carrito strings -->
+    <string name="mi_carrito">Mi Carrito</string>
+    <string name="carrito_vacio">Tu carrito está vacío</string>
+    <string name="agregar_productos">Añade productos para comenzar</string>
+    <string name="total_productos">Total de productos:</string>
+    <string name="total_pagar">Total a pagar:</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="comprar_ahora">Comprar Ahora</string>
+    <string name="precio_inicial">$0.00</string>
+    <string name="items_inicial">0</string>
+    <string name="lista_carrito">Lista de productos en el carrito</string>
 </resources>
