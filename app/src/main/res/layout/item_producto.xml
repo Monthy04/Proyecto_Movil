@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="12dp"
@@ -18,71 +19,117 @@
 
         
         <ImageView
-            android:id="@+id/imagen_producto"
+            android:id="@+id/imgProducto"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:background="#E8F4FD"
             android:contentDescription="Imagen del producto" />
 
-     
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#E3F2FD"
+            android:gravity="center"
             android:orientation="vertical"
-            android:padding="18dp"
-            android:background="#FFFFFF">
+            android:padding="18dp">
 
-            
+
             <TextView
-                android:id="@+id/nombre"
+                android:id="@+id/txtNombreProd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#1A237E"
-                android:maxLines="2"
+                android:layout_height="30dp"
+                android:layout_marginBottom="8dp"
                 android:ellipsize="end"
-                android:layout_marginBottom="8dp" />
+                android:maxLines="2"
+                android:textColor="#1A237E"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-            
+
             <TextView
-                android:id="@+id/desc"
+                android:id="@+id/txtDescProd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="#546E7A"
+                android:layout_height="30dp"
+                android:layout_marginBottom="12dp"
                 android:lineSpacingExtra="2dp"
-                android:layout_marginBottom="12dp" />
+                android:textColor="#1A237E"
+                android:textSize="18sp" />
 
-            
+
+            <TextView
+                android:id="@+id/txtCategoriaProd"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="#1A237E"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="#E3F2FD"
-                android:padding="12dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:padding="12dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/txtStock"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:text="Precio: "
-                    android:textSize="14sp"
+                    android:text="@string/stock"
                     android:textColor="#1976D2"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
-                
+
                 <TextView
-                    android:id="@+id/precio"
+                    android:id="@+id/txtStrockProd"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#1976D2"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#1976D2" />
+                    android:textStyle="bold" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="#E3F2FD"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/txtPrecio"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precio"
+                    android:textColor="#1976D2"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/txtPrecioProd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#1976D2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAgregarCarrito"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/agregar" />
 
         </LinearLayout>
 

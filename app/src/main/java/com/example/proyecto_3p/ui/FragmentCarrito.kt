@@ -7,11 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.proyecto_3p.R
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentCarrito.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentCarrito : Fragment() {
 
 

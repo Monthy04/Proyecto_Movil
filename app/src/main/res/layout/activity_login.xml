@@ -53,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#3A7CA5"
+            android:onClick="onClick"
             android:text="@string/ingresar"
             android:textColor="@android:color/white" />
 

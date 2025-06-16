@@ -27,6 +27,10 @@
         <item>Juguetes</item>
     </string-array>
 
+    <!--Activity Items-->
+    <string name="precio">Precio:</string>
+    <string name="stock">Stock:</string>
+    <string name="agregar">Agregar al Carrito</string>
 
     <!--Activity Carrito-->
     <string name="carrito">Mi Carrito</string>
