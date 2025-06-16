@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.proyecto_3p.MainActivity
 import com.example.proyecto_3p.R
 import com.example.proyecto_3p.UsuarioManager
 
@@ -24,7 +25,9 @@ class LoginActivity : AppCompatActivity() {
 
             if (usuario != null) {
                 Toast.makeText(this, "Bienvenido ${usuario.nombre}", Toast.LENGTH_SHORT).show()
-                // Aquí puedes pasar a otra actividad
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish() // Cierra LoginActivity para que no se pueda regresar con el botón atrás
             } else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
             }
