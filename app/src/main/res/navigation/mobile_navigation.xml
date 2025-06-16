@@ -3,23 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_catalogo">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.proyecto_3p.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/nav_catalogo"
+        android:name="com.example.proyecto_3p.FragmentCatalogo"
+        android:label="@string/productos"
+        tools:layout="@layout/fragment_catalogo" />
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.proyecto_3p.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/nav_carrito"
+        android:name="com.example.proyecto_3p.ui.FragmentCarrito"
+        android:label="@string/productos"
+        tools:layout="@layout/fragment_carrito" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.proyecto_3p.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_compras"
+        android:name="com.example.proyecto_3p.ui.FragmentCompras"
+        android:label="@string/productos"
+        tools:layout="@layout/fragment_compras" />
+    <fragment
+        android:id="@+id/nav_usuario"
+        android:name="com.example.proyecto_3p.ui.FragmentUsuario"
+        android:label="@string/productos"
+        tools:layout="@layout/fragment_usuario" />
+    <fragment
+        android:id="@+id/nav_nosotros"
+        android:name="com.example.proyecto_3p.ui.FragmentNosotros"
+        android:label="@string/productos"
+        tools:layout="@layout/fragment_nosotros" />
 </navigation>

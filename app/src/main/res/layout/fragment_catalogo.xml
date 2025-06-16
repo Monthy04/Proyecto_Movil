@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<com.google.android.material.tabs.TabLayout
-    android:id="@+id/tabLayoutCategorias"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:tabIndicatorColor="@color/purple_500"
-    app:tabSelectedTextColor="@color/purple_500"
-    app:tabTextColor="@color/black"/>
+    <SearchView
+        android:id="@+id/searchView"
+        android:queryHint="Buscar producto..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerProductos"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp"/>
+    <AutoCompleteTextView
+        android:id="@+id/categoriaFilter"
+        android:hint="Filtrar por categoría"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dropDownHeight="wrap_content"
+        android:inputType="none" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>
