@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:background="#FAFBFC">
 
-        <!-- Product Image -->
+        
         <ImageView
             android:id="@+id/imagen_producto"
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:background="#E8F4FD"
             android:contentDescription="Imagen del producto" />
 
-        <!-- Content Container -->
+     
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:padding="18dp"
             android:background="#FFFFFF">
 
-            <!-- Product Name -->
+            
             <TextView
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                 android:ellipsize="end"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Description -->
+            
             <TextView
                 android:id="@+id/desc"
                 android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                 android:lineSpacingExtra="2dp"
                 android:layout_marginBottom="12dp" />
 
-            <!-- Price Container -->
+            
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                     android:textColor="#1976D2"
                     android:textStyle="bold" />
 
-                <!-- Price -->
+                
                 <TextView
                     android:id="@+id/precio"
                     android:layout_width="0dp"
