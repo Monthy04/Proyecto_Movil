@@ -26,50 +26,51 @@
             android:src="@drawable/logotienda" />
 
         <EditText
-            android:id="@+id/etUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Usuario"
-            android:textColorHint="#565656"
+            android:id="@+id/editUsuario"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/edittext_background"
+            android:hint="@string/usuario"
+            android:inputType="text"
             android:padding="10dp"
-            android:layout_marginTop="16dp" />
+            android:textColorHint="#565656" />
 
         <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:textColorHint="#565656"
+            android:id="@+id/editPassword"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/edittext_background"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:layout_marginTop="8dp" />
+            android:textColorHint="#565656" />
 
         <Button
             android:id="@+id/btnIngresar"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Ingresar"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#3A7CA5"
-            android:layout_marginTop="16dp" />
+            android:text="@string/ingresar"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Aún no eres miembro?"
-            android:textColor="#FFFFFF"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:text="@string/registrartxt"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/tvRegistrate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Regístrate!"
+            android:layout_gravity="center"
+            android:text="@string/registro"
             android:textColor="#A9D6E5"
-            android:textStyle="bold"
-            android:layout_gravity="center" />
+            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>
