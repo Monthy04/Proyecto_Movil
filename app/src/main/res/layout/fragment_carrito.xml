@@ -45,32 +45,6 @@
             android:contentDescription="@string/lista_carrito" />
 
         <!-- Empty Cart Message -->
-        <LinearLayout
-            android:id="@+id/layout_carrito_vacio"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/carrito_vacio"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#546E7A"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/agregar_productos"
-                android:textSize="16sp"
-                android:textColor="#90A4AE" />
-
-        </LinearLayout>
 
     </LinearLayout>
 

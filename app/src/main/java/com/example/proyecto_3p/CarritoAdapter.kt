@@ -4,13 +4,14 @@ import kotlin.collections.mutableListOf
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto_3p.databinding.ItemProductoBinding
+import java.nio.DoubleBuffer
 
-class ProductosAdapter(private var productos: List<Producto>) : RecyclerView.Adapter<ProductosAdapter.ProductoViewHolder>()
+class CarritoAdapter(private var productos: List<Producto>) : RecyclerView.Adapter<CarritoAdapter.ProductoViewHolder>()
 {
-    private val productosCarrito = mutableListOf<Producto>()
-
     inner class ProductoViewHolder(val binding: ItemProductoBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -23,20 +24,25 @@ class ProductosAdapter(private var productos: List<Producto>) : RecyclerView.Ada
     {
         val producto = productos[position]
         holder.binding.txtNombreProd.text = producto.nombre
-        holder.binding.txtCategoriaProd.text = producto.categoria
-        holder.binding.txtDescProd.text = producto.desc
+        holder.binding.txtCategoriaProd.isVisible = false
+        holder.binding.txtDescProd.isVisible = false
         holder.binding.txtPrecioProd.text= "$${producto.precio}"
-        holder.binding.txtStrockProd.text= "${producto.disponibilidad}."
-
-        holder.binding.btnAgregarCarrito.setOnClickListener{
-            Toast.makeText(holder.itemView.context,"Producto Agregado", Toast.LENGTH_SHORT).show()
-
-            productosCarrito.add(productos[position])
-            JsonStorage.saveData(holder.itemView.context,"carrito.json",productosCarrito)
-        }
+        holder.binding.txtStock.isVisible = false
+        holder.binding.txtStrockProd.isVisible = false
+        holder.binding.btnAgregarCarrito.isVisible = false
     }
 
     override fun getItemCount(): Int = productos.size
+
+    fun getPrecio(): Double
+    {
+        var precio: Double = 0.0
+        for(Producto in productos)
+        {
+            precio += Producto.precio
+        }
+        return precio
+    }
 
     fun actualizarLista(nuevaLista: List<Producto>) {
         productos = nuevaLista
