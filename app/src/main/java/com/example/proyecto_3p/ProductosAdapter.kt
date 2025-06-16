@@ -18,7 +18,7 @@ class ProductosAdapter(private var productos: List<Producto>) : RecyclerView.Ada
     override fun onBindViewHolder(holder: ProductoViewHolder, position: Int) {
         val producto = productos[position]
         holder.binding.nombre.text = producto.nombre
-        holder.binding.precio.text = "$${producto.precio}"
+        holder.binding.precio.text = "$${producto.precio}."
         holder.binding.desc.text = producto.desc
     }
 
