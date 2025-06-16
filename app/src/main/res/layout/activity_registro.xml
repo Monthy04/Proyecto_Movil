@@ -101,9 +101,10 @@
             android:id="@+id/btnUnirse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Unirse"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#3A7CA5"
-            android:layout_marginTop="16dp" />
+            android:onClick="onClick"
+            android:text="Unirse"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </ScrollView>
