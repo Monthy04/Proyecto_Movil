@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondoLog" />
+        android:src="@drawable/fondolog" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -23,7 +23,7 @@
             android:layout_width="324dp"
             android:layout_height="338dp"
             android:layout_gravity="center"
-            android:src="@drawable/logoTienda" />
+            android:src="@drawable/logotienda" />
 
         <EditText
             android:id="@+id/etUsuario"
